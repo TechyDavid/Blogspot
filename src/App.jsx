@@ -4,7 +4,7 @@ import PostList from './Components/PostList';
 import './App.css'
 
 function App() {
-  const [modalIsVisble, setModalIsVisible] = useState(true);
+  const [modalIsVisble, setModalIsVisible] = useState(false);
 
   function showModalHandler() {
     setModalIsVisible(true);
