@@ -19,15 +19,25 @@ function PostList() {
     function authorChangeHandler(event){
         setEnteredAuthor(event.target.value)
     }
+    // let modalContent;
+
+    // if (modalIsVisble){
+    //     <Modal onClose={hideModalHandler}>
+    //     <NewPost onBodyChange={bodyChangeHandler} 
+    //             onAuthorChange={authorChangeHandler} 
+    //     />
+    // </Modal>
+    // }
+
     return ( 
     <>
-        {modalIsVisble ? ( <Modal onClose={hideModalHandler}>
+       {modalIsVisble && (
+        <Modal onClose={hideModalHandler}>
             <NewPost onBodyChange={bodyChangeHandler} 
                     onAuthorChange={authorChangeHandler} 
             />
         </Modal>
-        ):  null}
-       
+       )}
     <ul className={classes.Posts}>
          <Post author={enteredAuthor} body={enteredBody}/>
          <Post author="Rufus" body="By this time next week you will be proud of yourself" />
