@@ -8,21 +8,19 @@ function PostList({isPosting, onStopPosting}) {
  const {posts, setPosts } = useState([])
 
  function addPostHandler(postData) {
-
+    setPosts((existingPosts) => [postData, ...existingPosts]);
  }
     return ( 
     <>
        {isPosting && (
         <Modal onClose={onStopPosting}>
             <NewPost 
-                    onCancel={onStopPosting}
-            />
+                    onCancel={onStopPosting}  onAddPost={addPostHandler} />
         </Modal>
        )}
     <ul className={classes.Posts}>
-         <Post author="Rufus" body="By this time next week you will be proud of yourself" />
+         {posts.map((post) => <Post key={post.body} author={post.author} body={post.body} /> )}
     </ul>
-
     </>
     );
 }
