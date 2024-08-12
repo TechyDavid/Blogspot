@@ -1,10 +1,15 @@
+import MainHeader from './Components/MainHeader'
 import PostList from './Components/PostList';
 import './App.css'
+
 function App() {
   return(
-    <div>
-      <PostList/>
-    </div>
+    <>
+      <MainHeader />
+      <main>
+        <PostList/>
+      </main>
+    </>
   );
 }
 
