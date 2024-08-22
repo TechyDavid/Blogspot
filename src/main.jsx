@@ -11,10 +11,11 @@ const router = createBrowserRouter([
   { path: '/',
     element: <RootLayout />, 
     children: [
-    { path: '/', 
+    { 
+      path: '/', 
       element: <Posts/>,
-      children: [  { path: '/Create-post', element: <NewPost /> },
-      ] }, //App should be done here if the path is nothing//
+      children: [  { path: '/Create-post', element: <NewPost /> }], 
+    }, //App should be done here if the path is nothing//
     ],
   },
  
